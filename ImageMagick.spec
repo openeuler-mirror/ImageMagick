@@ -9,7 +9,7 @@ Source0:        https://mirrors.sohu.com/gentoo/distfiles/db/ImageMagick-6.9.10-
 
 Patch0001:      CVE-2019-7397.patch
 
-BuildRequires:  bzip2-devel freetype-devel libpng-devel perl-generators
+BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
 BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel 
 BuildRequires:  libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms2-devel
