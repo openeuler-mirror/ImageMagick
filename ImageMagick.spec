@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        5
+Release:        6
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick
 Url:            http://www.imagemagick.org/
@@ -9,9 +9,9 @@ Source0:        https://mirrors.sohu.com/gentoo/distfiles/db/ImageMagick-6.9.10-
 
 Patch0001:      CVE-2019-7397.patch
 
-BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
+BuildRequires:  bzip2-devel freetype-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
-BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel jasper-devel
+BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel 
 BuildRequires:  libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms2-devel
 BuildRequires:  libxml2-devel librsvg2-devel fftw-devel ilmbase-devel OpenEXR-devel
 BuildRequires:  openjpeg2-devel >= 2.1.0 libwebp-devel autoconf automake gcc gcc-c++
@@ -33,7 +33,7 @@ Summary:        Development files for ImageMagick
 Requires:       ImageMagick = %{epoch}:%{version}-%{release}
 Requires:       libgs-devel libX11-devel libXext-devel libXt-devel
 Requires:       bzip2-devel freetype-devel libtiff-devel libjpeg-devel lcms2-devel
-Requires:       libwebp-devel OpenEXR-devel jasper-devel pkgconfig
+Requires:       libwebp-devel OpenEXR-devel pkgconfig
 
 %description devel
 Development files for ImageMagick.
@@ -164,5 +164,8 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Tue Mar 10 2020 songnannan <songnannan2@huawei.com> - 6.9.10.67-6
+- delete the jasper
+
 * Mon Feb 24 2020 xuxijian<xuxijian@huawei.com> - 6.9.10.67-5 
 - Package init
