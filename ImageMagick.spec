@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        6
+Release:        7
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick
 Url:            http://www.imagemagick.org/
@@ -164,6 +164,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Tue May 19 2020 fengtao <fengtao40@huawei.com> - 6.9.10.67-7
+- rebuild for libwebp-1.1.0
+
 * Tue Mar 10 2020 songnannan <songnannan2@huawei.com> - 6.9.10.67-6
 - delete the jasper
 
