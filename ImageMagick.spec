@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        7
+Release:        8
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick
 Url:            http://www.imagemagick.org/
@@ -15,6 +15,7 @@ BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel
 BuildRequires:  libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms2-devel
 BuildRequires:  libxml2-devel librsvg2-devel fftw-devel ilmbase-devel OpenEXR-devel
 BuildRequires:  openjpeg2-devel >= 2.1.0 libwebp-devel autoconf automake gcc gcc-c++
+Requires:       %{name}-help = %{epoch}:%{version}-%{release}
 
 Provides:       ImageMagick-libs = %{epoch}:%{version}-%{release}
 Provides:       ImageMagick-djva = %{epoch}:%{version}-%{release}
@@ -164,6 +165,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Thu Nov 05 2020 leiju <leiju4@huawei.com> - 6.9.10.67-8
+- Add Requires ImageMagick-help into ImageMagick
+
 * Tue May 19 2020 fengtao <fengtao40@huawei.com> - 6.9.10.67-7
 - rebuild for libwebp-1.1.0
 
