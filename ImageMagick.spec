@@ -1,9 +1,9 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        9
+Release:        10
 Summary:        Create, edit, compose, or convert bitmap images
-License:        ImageMagick
+License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
 Source0:        https://mirrors.sohu.com/gentoo/distfiles/db/ImageMagick-6.9.10-67.tar.xz
 
@@ -184,6 +184,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Wed Jan 13 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-10
+- add MIT license
+
 * Tue Jan 12 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-9
 - fix CVE-2020-29599
 
