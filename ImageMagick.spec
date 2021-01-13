@@ -1,9 +1,9 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        9
+Release:        10
 Summary:        Create, edit, compose, or convert bitmap images
-License:        ImageMagick
+License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
 Source0:        https://mirrors.sohu.com/gentoo/distfiles/db/ImageMagick-6.9.10-67.tar.xz
 
@@ -18,6 +18,16 @@ Patch0008:      CVE-2020-27765.patch
 Patch0009:      CVE-2020-27766.patch
 Patch0010:      CVE-2020-27767.patch
 Patch0011:      CVE-2020-27770.patch
+Patch0012:      CVE-2020-29599-1.patch
+Patch0013:      CVE-2020-29599-2.patch
+Patch0014:      CVE-2020-29599-3.patch
+Patch0015:      CVE-2020-29599-4.patch
+Patch0016:      CVE-2020-29599-5.patch
+Patch0017:      CVE-2020-29599-6.patch
+Patch0018:      CVE-2020-29599-7.patch
+Patch0019:      CVE-2020-29599-8.patch
+Patch0020:      CVE-2020-29599-9.patch
+Patch0021:      CVE-2020-29599-10.patch
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -175,6 +185,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Wed Jan 13 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-10
+- fix CVE-2020-29599
+
 * Mon Jan 04 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-9
 - fix CVE-2018-16329 CVE-2020-27759 CVE-2020-27760 CVE-2020-27761 CVE-2020-27762
   CVE-2020-27764 CVE-2020-27765 CVE-2020-27765 CVE-2020-27766 CVE-2020-27767 CVE-2020-27770
