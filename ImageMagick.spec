@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        12
+Release:        11
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
@@ -189,10 +189,10 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
-* Thu Feb 25 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-12
+* Thu Feb 25 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-11
 - Fix CVE-2021-20176
 
-* Wed Feb 10 2021 zhanghua <zhanghua40@huawei.com> - 6.9.10.67-11
+* Wed Feb 10 2021 zhanghua <zhanghua40@huawei.com> - 6.9.10.67-10
 - fix CVE-2020-25664 CVE-2020-27754
 
 * Tue Jan 12 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-9
