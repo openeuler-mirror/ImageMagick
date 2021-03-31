@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        18
+Release:        19
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
@@ -15,7 +15,7 @@ Patch0005:      CVE-2020-27761.patch
 Patch0006:      CVE-2020-27762.patch
 Patch0007:      CVE-2020-27764.patch
 Patch0008:      CVE-2020-27765.patch
-Patch0009:      CVE-2020-27766.patch
+Patch0009:      CVE-2020-27766-CVE-2020-27774.patch
 Patch0010:      CVE-2020-27767.patch
 Patch0011:      CVE-2020-27770.patch
 Patch0012:      CVE-2020-29599-1.patch
@@ -35,8 +35,8 @@ Patch0025:      CVE-2020-25664.patch
 Patch0026:      CVE-2021-20176.patch
 Patch0027:      CVE-2020-27763.patch
 Patch0028:      CVE-2020-27773.patch
-Patch0029:      CVE-2020-27768-pre1.patch
-Patch0030:      CVE-2020-27768-pre2.patch
+Patch0029:      CVE-2020-27757.patch
+Patch0030:      CVE-2020-27751.patch
 Patch0031:      CVE-2020-27768.patch
 Patch0032:      CVE-2020-27750.patch
 Patch0033:      CVE-2020-25665.patch
@@ -44,6 +44,11 @@ Patch0034:      CVE-2020-25674.patch
 Patch0035:      CVE-2021-20241-CVE-2021-20243.patch
 Patch0036:      CVE-2021-20244.patch
 Patch0037:      CVE-2021-20246.patch
+Patch0038:      CVE-2020-25676.patch
+Patch0039:      CVE-2020-27758.patch
+Patch0040:      CVE-2020-27771.patch
+Patch0041:      CVE-2020-27772.patch
+Patch0042:      CVE-2020-27775.patch
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -200,6 +205,10 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Wed Mar 31 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-19
+- Fix CVE-2020-25676 CVE-2020-27757 CVE-2020-27758 CVE-2020-27771
+  CVE-2020-27772 CVE-2020-27774 CVE-2020-27775 CVE-2020-27751
+
 * Tue Mar 23 2021 zhanghua <zhanghua40@huawei.com> - 6.9.10.67-18
 - Fix CVE-2021-20246
 
