@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        6.9.10.67
-Release:        20
+Release:        21
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
@@ -52,6 +52,8 @@ Patch0042:      CVE-2020-27775.patch
 Patch0043:      CVE-2020-25666-1.patch
 Patch0044:      CVE-2020-25666-2.patch
 Patch0045:      CVE-2020-25675.patch
+Patch0046:      CVE-2020-27755.patch
+Patch0047:      CVE-2019-18853.patch
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -209,6 +211,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Mon Apr 12 2021 wangyue <wangyue92@huawei.com> - 6.9.10.67-21
+- Fix CVE-2019-18853 CVE-2020-27755
+
 * Tue Apr 6 2021 wangxiao <wangxiao65@huawei.com> - 6.9.10.67-20
 - Fix CVE-2020-25666 CVE-2020-25675
 
