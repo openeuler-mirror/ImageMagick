@@ -1,73 +1,18 @@
 Name:           ImageMagick
 Epoch:          1
-Version:        6.9.10.67
-Release:        25
+Version:        7.1.0.0
+Release:        1
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
-Source0:        https://mirrors.sohu.com/gentoo/distfiles/db/ImageMagick-6.9.10-67.tar.xz
-
-Patch0001:      CVE-2019-7397.patch
-Patch0002:      CVE-2018-16329.patch
-Patch0003:      CVE-2020-27759.patch
-Patch0004:      CVE-2020-27760.patch
-Patch0005:      CVE-2020-27761.patch
-Patch0006:      CVE-2020-27762.patch
-Patch0007:      CVE-2020-27764.patch
-Patch0008:      CVE-2020-27765.patch
-Patch0009:      CVE-2020-27766-CVE-2020-27774.patch
-Patch0010:      CVE-2020-27767.patch
-Patch0011:      CVE-2020-27770.patch
-Patch0012:      CVE-2020-29599-1.patch
-Patch0013:      CVE-2020-29599-2.patch
-Patch0014:      CVE-2020-29599-3.patch
-Patch0015:      CVE-2020-29599-4.patch
-Patch0016:      CVE-2020-29599-5.patch
-Patch0017:      CVE-2020-29599-6.patch
-Patch0018:      CVE-2020-29599-7.patch
-Patch0019:      CVE-2020-29599-8.patch
-Patch0020:      CVE-2020-29599-9.patch
-Patch0021:      CVE-2020-29599-10.patch
-Patch0022:      CVE-2020-27754-pre-1.patch
-Patch0023:      CVE-2020-27754-pre-2.patch
-Patch0024:      CVE-2020-27754.patch
-Patch0025:      CVE-2020-25664.patch
-Patch0026:      CVE-2021-20176.patch
-Patch0027:      CVE-2020-27763.patch
-Patch0028:      CVE-2020-27773.patch
-Patch0029:      CVE-2020-27757.patch
-Patch0030:      CVE-2020-27751.patch
-Patch0031:      CVE-2020-27768.patch
-Patch0032:      CVE-2020-27750.patch
-Patch0033:      CVE-2020-25665.patch
-Patch0034:      CVE-2020-25674.patch
-Patch0035:      CVE-2021-20241-CVE-2021-20243.patch
-Patch0036:      CVE-2021-20244.patch
-Patch0037:      CVE-2021-20246.patch
-Patch0038:      CVE-2020-25676.patch
-Patch0039:      CVE-2020-27758.patch
-Patch0040:      CVE-2020-27771.patch
-Patch0041:      CVE-2020-27772.patch
-Patch0042:      CVE-2020-27775.patch
-Patch0043:      CVE-2020-25666-1.patch
-Patch0044:      CVE-2020-25666-2.patch
-Patch0045:      CVE-2020-25675.patch
-Patch0046:      CVE-2020-27755.patch
-Patch0047:      CVE-2019-18853.patch
-Patch0048:      CVE-2020-27752.patch
-Patch0049:      CVE-2021-20309.patch
-Patch0050:      CVE-2021-20311-20312-20313.patch
-Patch0051:      CVE-2020-27769.patch
-Patch0052:      CVE-2020-27756.patch
-Patch0053:      CVE-2020-25667.patch
-Patch0054:      CVE-2020-27753.patch
+Source0:        https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.0-0.tar.gz
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
 BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel 
 BuildRequires:  libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms2-devel
 BuildRequires:  libxml2-devel librsvg2-devel fftw-devel ilmbase-devel OpenEXR-devel
-BuildRequires:  openjpeg2-devel >= 2.1.0 libwebp-devel autoconf automake gcc gcc-c++
+BuildRequires:  openjpeg2-devel >= 2.1.0 libwebp-devel autoconf automake gcc gcc-c++ open-sans-fonts
 
 Provides:       ImageMagick-libs = %{epoch}:%{version}-%{release}
 Provides:       ImageMagick-djva = %{epoch}:%{version}-%{release}
@@ -125,7 +70,7 @@ Requires:       ImageMagick-devel = %{epoch}:%{version}-%{release}
 Development files for ImageMagick-c++.
 
 %prep
-%autosetup -n ImageMagick-6.9.10-67 -p1
+%autosetup -n ImageMagick-7.1.0-0 -p1
 
 install -d Magick++/examples
 cp -p Magick++/demo/*.cpp Magick++/demo/*.miff Magick++/examples
@@ -142,7 +87,7 @@ export CFLAGS="%{optflags} -DIMPNG_SETJMP_IS_THREAD_SAFE"
 
 %install
 %make_install
-cp -a www/source %{buildroot}%{_datadir}/doc/ImageMagick-6.9.10
+cp -a www/source %{buildroot}%{_datadir}/doc/ImageMagick-7.1.0
 rm %{buildroot}%{_libdir}/*.la
 
 %{__perl} -MExtUtils::MakeMaker -e 'MY->fixin(@ARGV)' PerlMagick/demo/*.pl
@@ -169,33 +114,29 @@ rm PerlMagick/demo/Generic.ttf
 %files
 %doc LICENSE NOTICE AUTHORS.txt
 %{_bindir}/[a-z]*
-%{_libdir}/libMagickCore-6.Q16.so.6*
-%{_libdir}/libMagickWand-6.Q16.so.6*
-%{_libdir}/ImageMagick-6.9.10
-%{_datadir}/ImageMagick-6
-%dir %{_sysconfdir}/ImageMagick-6
-%config(noreplace) %{_sysconfdir}/ImageMagick-6/*.xml
+%{_libdir}/libMagickCore-7.Q16HDRI.so.10*
+%{_libdir}/libMagickWand-7.Q16HDRI.so.10*
+%{_libdir}/ImageMagick-7.1.0
+%{_datadir}/ImageMagick-7
+%dir %{_sysconfdir}/ImageMagick-7
+%config(noreplace) %{_sysconfdir}/ImageMagick-7/*.xml
 
 %files devel
 %{_bindir}/MagickCore-config
-%{_bindir}/Magick-config
 %{_bindir}/MagickWand-config
-%{_bindir}/Wand-config
-%{_libdir}/libMagickCore-6.Q16.so
-%{_libdir}/libMagickWand-6.Q16.so
+%{_libdir}/libMagickCore-7.Q16HDRI.so
+%{_libdir}/libMagickWand-7.Q16HDRI.so
 %{_libdir}/pkgconfig/MagickCore*
-%{_libdir}/pkgconfig/ImageMagick.pc
-%{_libdir}/pkgconfig/ImageMagick-6.Q16.pc
+%{_libdir}/pkgconfig/ImageMagick*.pc
 %{_libdir}/pkgconfig/MagickWand*
-%{_libdir}/pkgconfig/Wand*
-%dir %{_includedir}/ImageMagick-6
-%{_includedir}/%{name}-6/magick
-%{_includedir}/%{name}-6/wand
+%dir %{_includedir}/ImageMagick-7
+%{_includedir}/%{name}-7/MagickWand/*
+%{_includedir}/%{name}-7/MagickCore/*
 
 %files help
-%doc README.txt NEWS.txt ChangeLog Platforms.txt QuickStart.txt
-%doc %{_datadir}/doc/ImageMagick-6
-%doc %{_datadir}/doc/ImageMagick-6.9.10
+%doc README.txt NEWS.txt ChangeLog QuickStart.txt
+%doc %{_datadir}/doc/ImageMagick-7
+%doc %{_datadir}/doc/ImageMagick-7.1.0
 %{_mandir}/man[145]/[a-z]*
 %{_mandir}/man1/*
 %{_mandir}/man3/*
@@ -206,17 +147,20 @@ rm PerlMagick/demo/Generic.ttf
 %files c++
 %doc Magick++/AUTHORS Magick++/ChangeLog Magick++/NEWS Magick++/README
 %doc www/Magick++/COPYING
-%{_libdir}/libMagick++-6.Q16.so.8*
+%{_libdir}/libMagick++-7.Q16HDRI.so.5*
 
 %files c++-devel
 %doc Magick++/examples
 %{_bindir}/Magick++-config
-%{_includedir}/ImageMagick-6/Magick++*
-%{_libdir}/libMagick++-6.Q16.so
+%{_includedir}/ImageMagick-7/Magick++*
+%{_libdir}/libMagick++-7.Q16HDRI.so
 %{_libdir}/pkgconfig/Magick++*
-%{_libdir}/pkgconfig/ImageMagick++*
+%{_libdir}/pkgconfig/ImageMagick*
 
 %changelog
+* Fri Dec 31 2021 wulei <wulei80@huawei.com> - 7.1.0.0-1
+- Package update
+
 * Thu Jun 03 2021 wangyue <wangyue92@huawei.com> - 6.9.10.67-25
 - Fix CVE-2020-27756 CVE-2020-25667 CVE-2020-27753
 
