@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        7.1.0.0
-Release:        2
+Release:        3
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
@@ -11,10 +11,10 @@ BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-gener
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
 BuildRequires:  libgs-devel ghostscript-x11 libwmf-devel 
 BuildRequires:  libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms2-devel
-BuildRequires:  libxml2-devel librsvg2-devel fftw-devel ilmbase-devel OpenEXR-devel
+BuildRequires:  libxml2-devel librsvg2-devel fftw-devel Imath-devel OpenEXR-devel
 BuildRequires:  openjpeg2-devel >= 2.1.0 libwebp-devel autoconf automake gcc gcc-c++ open-sans-fonts
 
-Requires: open-sans-fonts
+Requires:       open-sans-fonts
 
 Provides:       ImageMagick-libs = %{epoch}:%{version}-%{release}
 Provides:       ImageMagick-djva = %{epoch}:%{version}-%{release}
@@ -160,6 +160,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick*
 
 %changelog
+* Wed Feb 23 2022 xu_ping <xuping33@huawei.com> - 7.1.0.0-3
+- OpenEXR upgrade abandoned ilmbase-devel,reference Imath-devel instead
+
 * Sat Feb 19 2022 xu_ping <xuping33@huawei.com> - 7.1.0.0-2
 - Add requires open-sans-fonts to fix unable to read font `helvetica`
 
