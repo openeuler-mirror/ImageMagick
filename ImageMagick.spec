@@ -1,11 +1,11 @@
 Name:           ImageMagick
 Epoch:          1
-Version:        7.1.0.27
+Version:        7.1.0.28
 Release:        1
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
-Source0:        https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.0-27.tar.gz
+Source0:        https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.0-28.tar.gz
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -72,7 +72,7 @@ Requires:       ImageMagick-devel = %{epoch}:%{version}-%{release}
 Development files for ImageMagick-c++.
 
 %prep
-%autosetup -n ImageMagick-7.1.0-27 -p1
+%autosetup -n ImageMagick-7.1.0-28 -p1
 
 install -d Magick++/examples
 cp -p Magick++/demo/*.cpp Magick++/demo/*.miff Magick++/examples
@@ -160,6 +160,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick*
 
 %changelog
+* Fri May 13 2022 houyingchao <houyingchao@h-partners.com> - 7.1.0.28-1
+- Upgrade to 7.1.0.28 for fix CVE-2022-1114
+
 * Thu Mar 10 2022 wangkai <wangkai385@huawei.com> - 7.1.0.27-1
 - Update to 7.1.0.27 for fix CVE-2021-39212 CVE-2021-3596
 
