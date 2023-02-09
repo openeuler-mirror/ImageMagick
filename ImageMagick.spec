@@ -1,7 +1,7 @@
 Name:           ImageMagick
 Epoch:          1
 Version:        7.1.0.28
-Release:        5
+Release:        6
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
@@ -14,6 +14,7 @@ Patch0004: CVE-2022-3213-pre2.patch
 Patch0005: CVE-2022-3213-pre3.patch
 Patch0006: CVE-2022-3213.patch
 Patch0007: CVE-2022-32547.patch
+Patch0008: CVE-2022-44267_CVE-2022-44268.patch
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -168,6 +169,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick*
 
 %changelog
+* Thu Feb 09 2023 yaoxin <yaoxin30@h-partners.com> - 1:7.1.0.28-6
+- Fix CVE-2022-44267 and CVE-2022-44268
+
 * Tue Nov 22 2022 yaoxin <yaoxin30@h-partners.com> - 1:7.1.0.28-5
 - Fix CVE-2022-32547
 
