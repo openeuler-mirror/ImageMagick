@@ -1,20 +1,11 @@
 Name:           ImageMagick
 Epoch:          1
-Version:        7.1.0.28
-Release:        5
+Version:        7.1.1.8
+Release:        1
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
-Source0:        https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.0-28.tar.gz
-
-Patch0001: backport-fix-CVE-2022-2719.patch
-Patch0002: backport-fix-CVE-2022-1115.patch
-Patch0003: CVE-2022-32547.patch
-Patch0004: CVE-2022-44267_CVE-2022-44268.patch
-Patch0005: CVE-2022-3213-pre1.patch
-Patch0006: CVE-2022-3213-pre2.patch
-Patch0007: CVE-2022-3213-pre3.patch
-Patch0008: CVE-2022-3213.patch
+Source0:        https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.1-8.tar.gz
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -81,7 +72,7 @@ Requires:       ImageMagick-devel = %{epoch}:%{version}-%{release}
 Development files for ImageMagick-c++.
 
 %prep
-%autosetup -n ImageMagick-7.1.0-28 -p1
+%autosetup -n ImageMagick-7.1.1-8 -p1
 
 install -d Magick++/examples
 cp -p Magick++/demo/*.cpp Magick++/demo/*.miff Magick++/examples
@@ -98,7 +89,7 @@ export CFLAGS="%{optflags} -DIMPNG_SETJMP_IS_THREAD_SAFE"
 
 %install
 %make_install
-cp -a www/source %{buildroot}%{_datadir}/doc/ImageMagick-7.1.0
+cp -a www/source %{buildroot}%{_datadir}/doc/ImageMagick-7.1.1
 rm %{buildroot}%{_libdir}/*.la
 
 %{__perl} -MExtUtils::MakeMaker -e 'MY->fixin(@ARGV)' PerlMagick/demo/*.pl
@@ -127,7 +118,7 @@ rm PerlMagick/demo/Generic.ttf
 %{_bindir}/[a-z]*
 %{_libdir}/libMagickCore-7.Q16HDRI.so.10*
 %{_libdir}/libMagickWand-7.Q16HDRI.so.10*
-%{_libdir}/ImageMagick-7.1.0
+%{_libdir}/ImageMagick-7.1.1
 %{_datadir}/ImageMagick-7
 %dir %{_sysconfdir}/ImageMagick-7
 %config(noreplace) %{_sysconfdir}/ImageMagick-7/*.xml
@@ -145,9 +136,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_includedir}/%{name}-7/MagickCore/*
 
 %files help
-%doc README.txt NEWS.txt ChangeLog.md QuickStart.txt
+%doc README.txt NEWS.txt QuickStart.txt
 %doc %{_datadir}/doc/ImageMagick-7
-%doc %{_datadir}/doc/ImageMagick-7.1.0
+%doc %{_datadir}/doc/ImageMagick-7.1.1
 %{_mandir}/man[145]/[a-z]*
 %{_mandir}/man1/*
 %{_mandir}/man3/*
@@ -169,6 +160,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick*
 
 %changelog
+* Mon Apr 24 2023 wangkai <13474090681@163.com> - 1:7.1.1.8-1
+- Update to 7.1.1.8 for Fix CVE-2023-1289,CVE-2023-1906
+
 * Thu Feb 09 2023 yaoxin <yaoxin30@h-partners.com> - 1:7.1.0.28-5
 - Fix CVE-2022-44267,CVE-2022-44268 and CVE-2022-3213
 
