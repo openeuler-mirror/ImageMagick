@@ -1,19 +1,11 @@
 Name:           ImageMagick
 Epoch:          1
-Version:        6.9.12.43
-Release:        5
+Version:        6.9.12.86
+Release:        1
 Summary:        Create, edit, compose, or convert bitmap images
 License:        ImageMagick and MIT
 Url:            http://www.imagemagick.org/
-Source0:        https://www.imagemagick.org/download/ImageMagick-6.9.12-43.tar.xz
-
-Patch0001: backport-fix-CVE-2022-1115.patch
-Patch0002: CVE-2022-3213-pre1.patch
-Patch0003: CVE-2022-3213-pre2.patch
-Patch0004: CVE-2022-3213.patch
-Patch0005: CVE-2022-32547.patch
-Patch0006: CVE-2022-44267_CVE-2022-44268.patch
-
+Source0:        https://www.imagemagick.org/download/ImageMagick-6.9.12-86.tar.xz
 
 BuildRequires:  bzip2-devel freetype-devel libjpeg-devel libpng-devel perl-generators
 BuildRequires:  libtiff-devel giflib-devel zlib-devel perl-devel >= 5.8.1 jbigkit-devel
@@ -79,7 +71,7 @@ Requires:       ImageMagick-devel = %{epoch}:%{version}-%{release}
 Development files for ImageMagick-c++.
 
 %prep
-%autosetup -n ImageMagick-6.9.12-43 -p1
+%autosetup -n ImageMagick-6.9.12-86 -p1
 
 install -d Magick++/examples
 cp -p Magick++/demo/*.cpp Magick++/demo/*.miff Magick++/examples
@@ -147,7 +139,7 @@ rm PerlMagick/demo/Generic.ttf
 %{_includedir}/%{name}-6/wand
 
 %files help
-%doc README.txt NEWS.txt ChangeLog.md QuickStart.txt
+%doc README.txt NEWS.txt QuickStart.txt
 %doc %{_datadir}/doc/ImageMagick-6
 %doc %{_datadir}/doc/ImageMagick-6.9.12
 %{_mandir}/man[145]/[a-z]*
@@ -171,6 +163,9 @@ rm PerlMagick/demo/Generic.ttf
 %{_libdir}/pkgconfig/ImageMagick++*
 
 %changelog
+* Mon Apr 24 2023 wangkai <13474090681@163.com> - 1:6.9.12.86-1
+- Update to 6.9.12.86 for Fix CVE-2023-1289,CVE-2023-1906
+
 * Thu Feb 09 2023 yaoxin <yaoxin30@h-partners.com> - 1:6.9.12.43-5
 - Fix CVE-2022-44267 and CVE-2022-44268
 
